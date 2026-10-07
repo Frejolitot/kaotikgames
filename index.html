@@ -1,0 +1,149 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>KaoTik Games</title>
+<meta name="description" content="KaoTik Games is a small independent launcher for our own games and mods made for live streaming.">
+<link rel="icon" href="logo.png">
+<style>
+  :root { --bg:#07070b; --card:#0f0f16; --line:#22202d; --text:#ffffff; --muted:#a3a3b8; --cyan:#42d9ed; --purple:#a168ff; --pink:#c92aef; }
+  * { box-sizing: border-box; }
+  html { scroll-behavior: smooth; }
+  body { margin:0; background:var(--bg); color:var(--text); font-family:"Segoe UI",system-ui,-apple-system,Roboto,Arial,sans-serif; line-height:1.6; }
+  a { color:var(--cyan); }
+  .wrap { max-width:940px; margin:0 auto; padding:0 20px; }
+  header { border-bottom:1px solid var(--line); background:linear-gradient(180deg, rgba(161,104,255,.16), rgba(161,104,255,0)); }
+  .top { display:flex; align-items:center; gap:14px; padding:22px 0; flex-wrap:wrap; }
+  .top img { width:52px; height:52px; border-radius:12px; }
+  .brand { font-size:26px; font-weight:800; letter-spacing:.3px; background:linear-gradient(90deg,var(--cyan),var(--pink)); -webkit-background-clip:text; background-clip:text; color:transparent; }
+  .lang { margin-left:auto; display:flex; gap:8px; }
+  .lang button { background:var(--card); color:var(--muted); border:1px solid var(--line); border-radius:8px; padding:6px 12px; font:inherit; font-weight:700; cursor:pointer; }
+  .lang button[aria-pressed="true"] { color:var(--text); border-color:var(--purple); }
+  .hero { padding:54px 0 40px; }
+  .hero h1 { font-size:clamp(30px,5vw,46px); line-height:1.15; margin:0 0 14px; }
+  .hero p { font-size:18px; color:var(--muted); max-width:680px; margin:0; }
+  .tag { display:inline-block; font-size:12px; font-weight:800; letter-spacing:1.5px; color:var(--purple); margin-bottom:12px; }
+  section { padding:26px 0; }
+  h2 { font-size:22px; margin:0 0 14px; }
+  .grid { display:grid; grid-template-columns:repeat(auto-fit,minmax(260px,1fr)); gap:16px; }
+  .card { background:var(--card); border:1px solid var(--line); border-radius:14px; padding:22px; }
+  .card h3 { margin:0 0 6px; font-size:19px; }
+  .card .kind { font-size:12px; font-weight:800; letter-spacing:1.2px; color:var(--cyan); }
+  .card p { color:var(--muted); margin:8px 0 0; }
+  ul { color:var(--muted); padding-left:20px; margin:0; }
+  li { margin:6px 0; }
+  li strong { color:var(--text); }
+  .note { border-left:3px solid var(--purple); padding:4px 0 4px 16px; color:var(--muted); }
+  footer { border-top:1px solid var(--line); margin-top:30px; padding:26px 0 40px; color:var(--muted); font-size:14px; }
+  [data-lang] { display:none; }
+  html[lang="en"] [data-lang="en"], html[lang="es"] [data-lang="es"] { display:revert; }
+</style>
+</head>
+<body>
+<header>
+  <div class="wrap top">
+    <img src="logo.png" alt="KaoTik Games logo">
+    <div class="brand">KaoTik Games</div>
+    <div class="lang" role="group" aria-label="Language">
+      <button type="button" id="b-en" aria-pressed="true">EN</button>
+      <button type="button" id="b-es" aria-pressed="false">ES</button>
+    </div>
+  </div>
+</header>
+
+<main class="wrap">
+  <div class="hero">
+    <div data-lang="en">
+      <div class="tag">INDEPENDENT GAMES &amp; MODS</div>
+      <h1>Games and mods built for live streaming.</h1>
+      <p>KaoTik Games is a small independent launcher for Windows. It gathers our own games and mods in one place, where viewers' gifts and interactions on a live stream trigger events inside the game.</p>
+    </div>
+    <div data-lang="es">
+      <div class="tag">JUEGOS Y MODS INDEPENDIENTES</div>
+      <h1>Juegos y mods hechos para el directo.</h1>
+      <p>KaoTik Games es un pequeño lanzador independiente para Windows. Reúne nuestros propios juegos y mods en un solo lugar, donde los regalos y las interacciones del público de un directo disparan eventos dentro del juego.</p>
+    </div>
+  </div>
+
+  <section>
+    <h2 data-lang="en">What is inside</h2>
+    <h2 data-lang="es">Qué incluye</h2>
+    <div class="grid">
+      <div class="card">
+        <div class="kind" data-lang="en">GAME</div><div class="kind" data-lang="es">JUEGO</div>
+        <h3>KaoTik Mario</h3>
+        <p data-lang="en">A 2D platformer where stream gifts launch events on screen: bosses, power-ups, traps and more.</p>
+        <p data-lang="es">Un plataformas 2D donde los regalos del directo lanzan eventos en pantalla: jefes, poderes, trampas y más.</p>
+      </div>
+      <div class="card">
+        <div class="kind">MOD · MINECRAFT: JAVA EDITION 1.20.1</div>
+        <h3>Bedrock Box</h3>
+        <p data-lang="en">A single-player Forge mod. The streamer plays inside a box while the audience's gifts trigger events around them.</p>
+        <p data-lang="es">Un mod de Forge para un jugador. El streamer juega dentro de una caja mientras los regalos del público disparan eventos a su alrededor.</p>
+      </div>
+    </div>
+  </section>
+
+  <section>
+    <h2 data-lang="en">How Bedrock Box works with Minecraft</h2>
+    <h2 data-lang="es">Cómo funciona Bedrock Box con Minecraft</h2>
+    <ul data-lang="en">
+      <li><strong>You need your own copy of Minecraft: Java Edition.</strong> Bedrock Box is a mod, not a copy of the game. KaoTik Games does not distribute Minecraft.</li>
+      <li><strong>Sign-in is done with Microsoft's official flow.</strong> The player signs in with their own Microsoft account on Microsoft's website, using a device code. KaoTik Games never sees or stores the password.</li>
+      <li><strong>Ownership is checked.</strong> The launcher only starts Minecraft for accounts that own Minecraft: Java Edition.</li>
+      <li><strong>Game files come from the official servers.</strong> Minecraft and its libraries are downloaded from Mojang's own servers; Forge from its official source.</li>
+      <li><strong>The mod can also be installed by hand</strong> into the player's existing Minecraft and played from the official Minecraft Launcher.</li>
+    </ul>
+    <ul data-lang="es">
+      <li><strong>Hace falta tu propia copia de Minecraft: Java Edition.</strong> Bedrock Box es un mod, no una copia del juego. KaoTik Games no distribuye Minecraft.</li>
+      <li><strong>El inicio de sesión es el oficial de Microsoft.</strong> El jugador entra con su propia cuenta de Microsoft en la web de Microsoft, con un código de dispositivo. KaoTik Games nunca ve ni guarda la contraseña.</li>
+      <li><strong>Se comprueba que el juego es tuyo.</strong> El lanzador solo abre Minecraft a las cuentas que tienen Minecraft: Java Edition.</li>
+      <li><strong>Los archivos del juego vienen de los servidores oficiales.</strong> Minecraft y sus librerías se descargan de los servidores de Mojang; Forge, de su fuente oficial.</li>
+      <li><strong>El mod también se puede instalar a mano</strong> en el Minecraft que ya tenga el jugador y jugarse desde el Minecraft Launcher oficial.</li>
+    </ul>
+  </section>
+
+  <section>
+    <h2 data-lang="en">Accounts and privacy</h2>
+    <h2 data-lang="es">Cuentas y privacidad</h2>
+    <ul data-lang="en">
+      <li>A KaoTik Games account is an email address and a password. We send a one-time code by email to confirm the address when the account is created.</li>
+      <li>Passwords are stored only as salted hashes. We do not sell or share account data.</li>
+      <li>Microsoft sign-in is used only to start Minecraft for the player. The resulting session stays on the player's computer.</li>
+    </ul>
+    <ul data-lang="es">
+      <li>Una cuenta de KaoTik Games es un correo y una contraseña. Al crearla enviamos un código de un solo uso por correo para confirmar la dirección.</li>
+      <li>Las contraseñas se guardan solo como resúmenes con sal. No vendemos ni compartimos datos de las cuentas.</li>
+      <li>El inicio de sesión de Microsoft se usa únicamente para abrir Minecraft al jugador. Esa sesión se queda en su equipo.</li>
+    </ul>
+  </section>
+
+  <section>
+    <h2 data-lang="en">Contact</h2>
+    <h2 data-lang="es">Contacto</h2>
+    <p class="note"><a href="mailto:gameskaotik@gmail.com">gameskaotik@gmail.com</a></p>
+  </section>
+</main>
+
+<footer>
+  <div class="wrap">
+    <div data-lang="en">KaoTik Games is an independent project. NOT AN OFFICIAL MINECRAFT PRODUCT. NOT APPROVED BY OR ASSOCIATED WITH MOJANG OR MICROSOFT. Minecraft is a trademark of Mojang Synergies AB. Other names belong to their respective owners.</div>
+    <div data-lang="es">KaoTik Games es un proyecto independiente. NO ES UN PRODUCTO OFICIAL DE MINECRAFT. NO ESTÁ APROBADO POR MOJANG O MICROSOFT NI ASOCIADO CON ELLOS. Minecraft es una marca de Mojang Synergies AB. Los demás nombres pertenecen a sus respectivos dueños.</div>
+  </div>
+</footer>
+
+<script>
+  function setLang(l) {
+    document.documentElement.lang = l;
+    document.getElementById('b-en').setAttribute('aria-pressed', String(l === 'en'));
+    document.getElementById('b-es').setAttribute('aria-pressed', String(l === 'es'));
+    try { localStorage.setItem('kt-lang', l); } catch (e) {}
+  }
+  document.getElementById('b-en').addEventListener('click', function () { setLang('en'); });
+  document.getElementById('b-es').addEventListener('click', function () { setLang('es'); });
+  var saved = null; try { saved = localStorage.getItem('kt-lang'); } catch (e) {}
+  setLang(saved || ((navigator.language || 'en').slice(0, 2) === 'es' ? 'es' : 'en'));
+</script>
+</body>
+</html>
